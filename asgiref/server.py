@@ -56,7 +56,7 @@ class StatelessServer:
         """
         Runs the asyncio event loop with our handler loop.
         """
-        event_loop = get_running_loop()
+        event_loop = asyncio.get_event_loop()
         asyncio.ensure_future(self.application_checker())
         try:
             event_loop.run_until_complete(self.handle())
